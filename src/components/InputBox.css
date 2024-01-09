@@ -1,0 +1,24 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="range"]::-moz-range-progress {
+  background-color: #43e5f7;
+}
+input[type="range"]::-moz-range-track {
+  background-color: #9a905d;
+}
+/* IE*/
+input[type="range"]::-ms-fill-lower {
+  background-color: #43e5f7;
+}
+input[type="range"]::-ms-fill-upper {
+  background-color: #9a905d;
+}
