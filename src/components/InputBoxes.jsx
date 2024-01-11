@@ -1,6 +1,5 @@
-import { useState } from "react";
 import "./InputBox.css";
-import Input from "./Input";
+import Input from "./InputSlider";
 
 const InputBoxes = () => {
   return (
