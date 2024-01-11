@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Input from "./Input";
 
-const InputSlider = ({ title, defaultValue, value, minVal, maxVal, logic }) => {
+const InputSlider = ({ title, defaultValue, value, minVal, maxVal, logic,finalResult }) => {
   const [sliderValue, setSliderValue] = useState(0);
 
   const handleSliderChange = (event) => {
@@ -14,6 +14,7 @@ const InputSlider = ({ title, defaultValue, value, minVal, maxVal, logic }) => {
   const setChangeValues = (newVal) => {
     logic(() => (value = newVal));
   };
+
 
   return (
     <div className="flex flex-col gap-6 mt-8">

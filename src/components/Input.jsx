@@ -1,4 +1,9 @@
-const Input = ({ title, defaultValue, value }) => {
+const Input = ({ title, defaultValue, value, finalResult,setFinalResult }) => {
+  // Inside the Input component
+  const onChangeHandler = () => {
+    setFinalResult(finalResult()); // Use props.setFinalResult
+  };
+
   return (
     <div className="flex flex-row justify-between items-center gap-10">
       <h2 className="text-black text-lg">{title}</h2>
@@ -11,6 +16,7 @@ const Input = ({ title, defaultValue, value }) => {
           value={value}
           type="number"
           id="cost"
+          onChange={onChangeHandler}
           className="outline-none border-dark-grey text-green px-8 py-1 rounded-md bg-bgColor w-[150px]"
           defaultValue={defaultValue}
           style={{ appearance: "textfield", textAlign: "right" }}

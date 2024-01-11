@@ -1,12 +1,45 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import "./InputBox.css";
 import Input from "./InputSlider";
 
-const InputBoxes = () => {
+const InputBoxes = ({ setFinalResult }) => {
   const [totalCost, setTotalCost] = useState(500);
   const [interestRate, setInterestRate] = useState(1);
   const [processingFee, setProcessingFee] = useState(1);
   const [tenure, setTenure] = useState(12);
+
+  const calculateEMI = () => {
+    const monthlyInterestRate = interestRate / 12 / 100;
+
+    const emi =
+      (totalCost *
+        monthlyInterestRate *
+        Math.pow(1 + monthlyInterestRate, tenure)) /
+      (Math.pow(1 + monthlyInterestRate, tenure) - 1);
+    console.log("final Res", emi);
+
+    const totalLoanAmount =
+      emi *
+      ((Math.pow(1 + monthlyInterestRate, tenure) - 1) /
+        (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, tenure)));
+
+    const totalDownPayment = totalLoanAmount - totalCost;
+
+    const loanPerMonth = totalLoanAmount / tenure;
+
+    const res = {
+      emi: emi,
+      totalLoanAmount: totalLoanAmount,
+      totalDownPayment: totalDownPayment,
+      loanPerMonth: loanPerMonth,
+    };
+
+    console.log(res);
+
+    setFinalResult(res);
+    return res;
+  };
 
   return (
     <>
@@ -27,6 +60,8 @@ const InputBoxes = () => {
           minVal={500}
           maxVal={50000000}
           logic={setTotalCost}
+          finalResult={calculateEMI()}
+          setFinalResult={setFinalResult} // Pass the setFinalResult function
         />
         <Input
           title="Interest Rate (in %)"
