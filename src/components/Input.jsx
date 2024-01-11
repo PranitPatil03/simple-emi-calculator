@@ -1,4 +1,4 @@
-const Input = ({ title, defaultValue }) => {
+const Input = ({ title, defaultValue, value }) => {
   return (
     <div className="flex flex-row justify-between items-center gap-10">
       <h2 className="text-black text-lg">{title}</h2>
@@ -8,6 +8,7 @@ const Input = ({ title, defaultValue }) => {
           ₹
         </span>
         <input
+          value={value}
           type="number"
           id="cost"
           className="outline-none border-dark-grey text-green px-8 py-1 rounded-md bg-bgColor w-[150px]"
