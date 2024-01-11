@@ -18,8 +18,6 @@ const InputBoxes = () => {
         <Input title="Total Cost of Assert" defaultValue={500} />
         <Input title="Interest Rate (in %)" defaultValue={10} />
         <Input title="Processing Fee (in %)" defaultValue={2} />
-        <Input title="Total Down Payment" defaultValue={1000} />
-        <Input title="Loan Per Month" defaultValue={1000} />
         <Input title="Tenure" defaultValue={12} />
       </div>
     </>

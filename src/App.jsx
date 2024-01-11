@@ -6,7 +6,8 @@ function App() {
       <div className="flex w-[30rem] h-[50rem] mt-[5rem] shadow-lg p-4">
         <InputBoxes></InputBoxes>
       </div>
-      <div className="flex w-[30rem] h-[50rem] mt-[5rem] shadow-lg p-4"></div>
+      <div className="flex w-[30rem] h-[50rem] mt-[5rem] shadow-lg p-4">
+      </div>
     </div>
   );
 }
